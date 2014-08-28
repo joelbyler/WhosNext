@@ -114,6 +114,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="teamMemberNameDidEndEdit:" target="-2" id="Mjr-o3-j1L"/>
+                    </connections>
                 </textField>
                 <textField verticalHuggingPriority="750" id="R5E-YK-TTF">
                     <rect key="frame" x="291" y="198" width="66" height="22"/>
@@ -126,8 +129,37 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="teamMemberPositionDidEndEdit:" target="-2" id="GIz-uQ-suc"/>
+                    </connections>
                 </textField>
+                <button verticalHuggingPriority="750" id="s2B-Go-Ojr">
+                    <rect key="frame" x="235" y="29" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rEx-G9-Pmp">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="removeMember:" target="-2" id="tnW-gz-HlT"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" id="nhk-FH-AVb">
+                    <rect key="frame" x="215" y="29" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AB6-Q4-TcX">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addMember:" target="-2" id="rQu-ET-Hbw"/>
+                    </connections>
+                </button>
             </subviews>
         </customView>
     </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSRemoveTemplate" width="8" height="8"/>
+    </resources>
 </document>

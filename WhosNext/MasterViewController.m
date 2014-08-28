@@ -75,5 +75,47 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return [self.members count];
 }
+- (IBAction)teamMemberNameDidEndEdit:(id)sender {
+    TeamMeberDoc *selectedDoc = [self selectedTeamMemberDoc];
+    if (selectedDoc){
+        selectedDoc.data.name = [self.teamMembernameTextField stringValue];
+        
+        NSIndexSet * indexSet = [NSIndexSet indexSetWithIndex:[self.members     indexOfObject:selectedDoc]];
+        NSIndexSet * columnSet = [NSIndexSet indexSetWithIndex:0];
+        [self.teamMembersTableView reloadDataForRowIndexes:indexSet columnIndexes:columnSet];
+    }
+}
+- (IBAction)teamMemberPositionDidEndEdit:(id)sender {
+    TeamMeberDoc *selectedDoc = [self selectedTeamMemberDoc];
+    if (selectedDoc){
+        selectedDoc.data.position = [self.teamMemberPositionTextField floatValue];
+        
+        NSIndexSet * indexSet = [NSIndexSet indexSetWithIndex:[self.members     indexOfObject:selectedDoc]];
+        NSIndexSet * columnSet = [NSIndexSet indexSetWithIndex:0];
+        [self.teamMembersTableView reloadDataForRowIndexes:indexSet columnIndexes:columnSet];
+    }
+}
+
+- (IBAction)addMember:(id)sender {
+    TeamMeberDoc *newDoc = [[TeamMeberDoc alloc] initWithName:@"New Team Member" position:0];
+    
+    [self.members addObject:newDoc];
+    NSInteger newRowIndex = self.members.count-1;
+    
+    [self.teamMembersTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:newRowIndex] withAnimation:NSTableViewAnimationEffectGap];
+    
+    [self.teamMembersTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:newRowIndex] byExtendingSelection:NO ];
+    [self.teamMembersTableView scrollRowToVisible:newRowIndex];
+    
+}
+
+- (IBAction)removeMember:(id)sender {
+    TeamMeberDoc *selectedDoc = [self selectedTeamMemberDoc];
+    if(selectedDoc){
+        [self.members removeObject:selectedDoc];
+        [self.teamMembersTableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:self.teamMembersTableView.selectedRow] withAnimation:NSTableViewAnimationSlideRight];
+        [self setDetailInfo:nil];
+    }
+}
 
 @end
