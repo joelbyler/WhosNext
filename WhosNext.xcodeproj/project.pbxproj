@@ -18,6 +18,10 @@
 		5D1257ED19AE734C00029CB4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1257CC19AE734C00029CB4 /* Cocoa.framework */; };
 		5D1257F519AE734C00029CB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D1257F319AE734C00029CB4 /* InfoPlist.strings */; };
 		5D1257F719AE734C00029CB4 /* WhosNextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1257F619AE734C00029CB4 /* WhosNextTests.m */; };
+		5D12580319AE744A00029CB4 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12580119AE744A00029CB4 /* MasterViewController.m */; };
+		5D12580419AE744A00029CB4 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D12580219AE744A00029CB4 /* MasterViewController.xib */; };
+		5D12580919AE76CC00029CB4 /* TeamMemberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12580819AE76CC00029CB4 /* TeamMemberData.m */; };
+		5D12580C19AE77EB00029CB4 /* TeamMeberDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D12580B19AE77EB00029CB4 /* TeamMeberDoc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,13 @@
 		5D1257F219AE734C00029CB4 /* WhosNextTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WhosNextTests-Info.plist"; sourceTree = "<group>"; };
 		5D1257F419AE734C00029CB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D1257F619AE734C00029CB4 /* WhosNextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhosNextTests.m; sourceTree = "<group>"; };
+		5D12580019AE744A00029CB4 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		5D12580119AE744A00029CB4 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		5D12580219AE744A00029CB4 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		5D12580719AE76CC00029CB4 /* TeamMemberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMemberData.h; sourceTree = "<group>"; };
+		5D12580819AE76CC00029CB4 /* TeamMemberData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMemberData.m; sourceTree = "<group>"; };
+		5D12580A19AE77EB00029CB4 /* TeamMeberDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMeberDoc.h; sourceTree = "<group>"; };
+		5D12580B19AE77EB00029CB4 /* TeamMeberDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMeberDoc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +126,8 @@
 		5D1257D219AE734C00029CB4 /* WhosNext */ = {
 			isa = PBXGroup;
 			children = (
-				5D1257DE19AE734C00029CB4 /* AppDelegate.h */,
-				5D1257DF19AE734C00029CB4 /* AppDelegate.m */,
-				5D1257E119AE734C00029CB4 /* MainMenu.xib */,
+				5D12580619AE765500029CB4 /* Model */,
+				5D12580519AE763200029CB4 /* GUI */,
 				5D1257E419AE734C00029CB4 /* Images.xcassets */,
 				5D1257D319AE734C00029CB4 /* Supporting Files */,
 			);
@@ -152,6 +162,30 @@
 				5D1257F319AE734C00029CB4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D12580519AE763200029CB4 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				5D1257DE19AE734C00029CB4 /* AppDelegate.h */,
+				5D1257DF19AE734C00029CB4 /* AppDelegate.m */,
+				5D12580019AE744A00029CB4 /* MasterViewController.h */,
+				5D12580119AE744A00029CB4 /* MasterViewController.m */,
+				5D12580219AE744A00029CB4 /* MasterViewController.xib */,
+				5D1257E119AE734C00029CB4 /* MainMenu.xib */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		5D12580619AE765500029CB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D12580719AE76CC00029CB4 /* TeamMemberData.h */,
+				5D12580819AE76CC00029CB4 /* TeamMemberData.m */,
+				5D12580A19AE77EB00029CB4 /* TeamMeberDoc.h */,
+				5D12580B19AE77EB00029CB4 /* TeamMeberDoc.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D12580419AE744A00029CB4 /* MasterViewController.xib in Resources */,
 				5D1257D719AE734C00029CB4 /* InfoPlist.strings in Resources */,
 				5D1257E519AE734C00029CB4 /* Images.xcassets in Resources */,
 				5D1257DD19AE734C00029CB4 /* Credits.rtf in Resources */,
@@ -252,7 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D12580C19AE77EB00029CB4 /* TeamMeberDoc.m in Sources */,
+				5D12580919AE76CC00029CB4 /* TeamMemberData.m in Sources */,
 				5D1257E019AE734C00029CB4 /* AppDelegate.m in Sources */,
+				5D12580319AE744A00029CB4 /* MasterViewController.m in Sources */,
 				5D1257D919AE734C00029CB4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
