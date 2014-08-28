@@ -14,6 +14,7 @@
 @property (weak) IBOutlet NSTableView *teamMembersTableView;
 @property (weak) IBOutlet NSTextField *teamMembernameTextField;
 @property (weak) IBOutlet NSTextField *teamMemberPositionTextField;
+@property (weak) IBOutlet NSButton *deleteButton;
 
 @end
 
@@ -68,8 +69,13 @@
 
 -(void)tableViewSelectionDidChange:(NSNotification *)aNotification {
     TeamMeberDoc *selectedDoc = [self selectedTeamMemberDoc];
+
     // Update info
     [self setDetailInfo:selectedDoc];
+    BOOL buttonsEnabled = (selectedDoc!=nil);
+    [self.deleteButton setEnabled:buttonsEnabled];
+    [self.teamMembernameTextField setEnabled:buttonsEnabled];
+    [self.teamMemberPositionTextField setEnabled:buttonsEnabled];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
